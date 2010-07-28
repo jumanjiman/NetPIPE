@@ -1,7 +1,7 @@
 Summary: Protocol independent performance tool
 Name: NetPIPE
 Version: 3.7.1
-Release: 2.0.1%{?dist}
+Release: 2.0.2%{?dist}
 License: GPL+
 Group: Applications/Internet
 URL: http://bitspjoule.org/netpipe/
@@ -49,6 +49,9 @@ rm -rf %{buildroot}
 %{_bindir}/*
 
 %changelog
+* Wed Jul 28 2010 Paul Morgan <jumanjiman@gmail.com> 3.7.1-2.0.2
+- new package built with tito and ibverbs support
+
 * Wed Jul 28 2010 Jens Kuehnel <fedora-package@jens.kuehnel.org> - 3.7.1-2.0.1
 - add ibvers support
 * Thu Oct 15 2009 Scott Collier <boodle11@gmail.com> - 3.7.1-2
