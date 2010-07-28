@@ -1,6 +1,6 @@
 Summary: Protocol independent performance tool
 Name: NetPIPE
-Version: 3.7.1-ibv
+Version: 3.7.1.ibv
 Release: 2.0.2%{?dist}
 License: GPL+
 Group: Applications/Internet
