@@ -1,7 +1,7 @@
 Summary: Protocol independent performance tool
 Name: NetPIPE
-Version: 3.7.1.ibv
-Release: 2.0.5%{?dist}
+Version: 3.7.1
+Release: 2.0.6%{?dist}
 License: GPL+
 Group: Applications/Internet
 URL: http://bitspjoule.org/netpipe/
@@ -22,6 +22,7 @@ the round trip time in half for small messages ( < 64 Bytes ).
 
 %prep
 %setup -q 
+make clean
 
 %build
 make %{?_smp_mflags} memcpy tcp ibv \
@@ -30,13 +31,12 @@ make %{?_smp_mflags} memcpy tcp ibv \
 %install
 rm -rf %{buildroot}
 chmod 0644 dox/*
-chmod 0644 bin/feplot
-chmod 0644 bin/geplot
-chmod 0644 bin/nplaunch
 
+install -Dp -m0755 bin/feplot  %{buildroot}%{_bindir}/feplot
+install -Dp -m0755 bin/geplot  %{buildroot}%{_bindir}/geplot
+install -Dp -m0755 bin/nplaunch  %{buildroot}%{_bindir}/nplaunch
 install -Dp -m0755 NPmemcpy %{buildroot}%{_bindir}/NPmemcpy
 install -Dp -m0755 NPtcp %{buildroot}%{_bindir}/NPtcp
-install -Dp -m0755 NPmpi %{buildroot}%{_bindir}/NPmpi
 install -Dp -m0755 NPibv %{buildroot}%{_bindir}/NPibv
 install -Dp -m0644 dox/netpipe.1 %{buildroot}%{_mandir}/man1/netpipe.1
 
@@ -46,11 +46,17 @@ rm -rf %{buildroot}
 %files
 %defattr(-, root, root, -)
 %doc dox/netpipe_paper.ps  dox/README dox/np_cluster2002.pdf dox/np_euro.pdf
-%doc bin/feplot bin/geplot bin/nplaunch
 %doc %{_mandir}/man1/netpipe.1*
 %{_bindir}/*
 
 %changelog
+* Wed Jul 28 2010 "Jens Kuehnel <fedora-package@jens.kuehnel.org>" - 3.7.1-2.0.6
+- put all binaries/scripts into _bindir
+
+* Wed Jul 28 2010 "Jens Kuehnel <fedora-package@jens.kuehnel.org>" - 3.7.1-2.0.5
+- remove ibv from version string (not compatible with Fedora Package Guideline)
+- remove NPmpi because of broken mpicc
+
 * Wed Jul 28 2010 Paul Morgan <jumanjiman@gmail.com> 3.7.1.ibv-2.0.5
 - removed requires for libibverbs (jumanjiman@gmail.com)
 
