@@ -1,7 +1,7 @@
 Summary: Protocol independent performance tool
 Name: NetPIPE
 Version: 3.7.1.ibv
-Release: 2.0.3%{?dist}
+Release: 2.0.4%{?dist}
 License: GPL+
 Group: Applications/Internet
 URL: http://bitspjoule.org/netpipe/
@@ -52,6 +52,9 @@ rm -rf %{buildroot}
 %{_bindir}/*
 
 %changelog
+* Wed Jul 28 2010 Paul Morgan <jumanjiman@gmail.com> 3.7.1.ibv-2.0.4
+- add binaries NPibv and NPmpi to install section of spec
+
 * Wed Jul 28 2010 Paul Morgan <pmorgan@redhat.com> 3.7.1.ibv-2.0.3
 - version now uses .ibv (pmorgan@redhat.com)
 - requires libibverbs (pmorgan@redhat.com)
