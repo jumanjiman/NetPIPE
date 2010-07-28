@@ -3,3 +3,7 @@ debuglinks.list
 debugsources.list
 *~
 *.swp
+NPmpi
+NPibv
+NPtcp
+NPmemcpy
