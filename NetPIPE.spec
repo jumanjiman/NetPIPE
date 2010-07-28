@@ -1,7 +1,7 @@
 Summary: Protocol independent performance tool
 Name: NetPIPE
 Version: 3.7.1
-Release: 2.0.6%{?dist}
+Release: 2.0.7%{?dist}
 License: GPL+
 Group: Applications/Internet
 URL: http://bitspjoule.org/netpipe/
@@ -50,6 +50,10 @@ rm -rf %{buildroot}
 %{_bindir}/*
 
 %changelog
+* Wed Jul 28 2010 Paul Morgan <jumanjiman@gmail.com> 3.7.1-2.0.7
+- git now ignores binaries left over from build process (jumanjiman@gmail.com)
+- Updated SPEC-File with a couple of cleanups (fedora-package@jens.kuehnel.org)
+
 * Wed Jul 28 2010 "Jens Kuehnel <fedora-package@jens.kuehnel.org>" - 3.7.1-2.0.6
 - put all binaries/scripts into _bindir
 
