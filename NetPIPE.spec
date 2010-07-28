@@ -37,6 +37,8 @@ chmod 0644 bin/nplaunch
 
 install -Dp -m0755 NPmemcpy %{buildroot}%{_bindir}/NPmemcpy
 install -Dp -m0755 NPtcp %{buildroot}%{_bindir}/NPtcp
+install -Dp -m0755 NPmpi %{buildroot}%{_bindir}/NPmpi
+install -Dp -m0755 NPibv %{buildroot}%{_bindir}/NPibv
 install -Dp -m0644 dox/netpipe.1 %{buildroot}%{_mandir}/man1/netpipe.1
 
 %clean
