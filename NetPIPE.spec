@@ -9,7 +9,6 @@ URL: http://bitspjoule.org/netpipe/
 Source: http://bitspjoule.org/netpipe/code/NetPIPE-%{version}.tar.gz
 BuildRoot: %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 BuildRequires: libibverbs-devel
-requires: libibverbs
 
 %description
 NetPIPE is a protocol independent performance tool that visually represents
